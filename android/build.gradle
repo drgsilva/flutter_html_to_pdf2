@@ -25,7 +25,7 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 
 android {
-    namespace 'com.afur.flutter_html_to_pdf'
+    namespace 'pt.dgsilva.flutter_html_to_pdf'
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -41,6 +41,7 @@ android {
 
     defaultConfig {
         minSdkVersion 16
+        compileSdkVersion 33
     }
 }
 
