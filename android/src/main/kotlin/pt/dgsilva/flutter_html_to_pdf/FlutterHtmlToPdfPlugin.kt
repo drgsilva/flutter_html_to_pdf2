@@ -1,4 +1,4 @@
-package com.afur.flutter_html_to_pdf
+package pt.dgsilva.flutter_html_to_pdf
 
 import android.content.Context
 import androidx.annotation.NonNull
@@ -7,7 +7,6 @@ import io.flutter.embedding.engine.plugins.FlutterPlugin
 import io.flutter.plugin.common.MethodCall
 import io.flutter.plugin.common.MethodChannel
 import io.flutter.plugin.common.MethodChannel.MethodCallHandler
-import io.flutter.plugin.common.MethodChannel.Result
 
 /** FlutterHtmlToPdfPlugin */
 class FlutterHtmlToPdfPlugin: FlutterPlugin, MethodCallHandler {
@@ -36,7 +35,8 @@ class FlutterHtmlToPdfPlugin: FlutterPlugin, MethodCallHandler {
   private fun convertHtmlToPdf(call: MethodCall, result: Result) {
     val htmlFilePath = call.argument<String>("htmlFilePath")
 
-    HtmlToPdfConverter().convert(htmlFilePath!!, applicationContext, object : HtmlToPdfConverter.Callback {
+    HtmlToPdfConverter().convert(htmlFilePath!!, applicationContext, object :
+      HtmlToPdfConverter.Callback {
       override fun onSuccess(filePath: String) {
         result.success(filePath)
       }
