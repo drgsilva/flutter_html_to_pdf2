@@ -1,4 +1,4 @@
-group 'pt.dgsilva.flutter_html_to_pdf'
+group 'com.afur.flutter_html_to_pdf'
 version '1.0-SNAPSHOT'
 
 buildscript {
@@ -14,7 +14,7 @@ buildscript {
     }
 }
 
-rootProject.allprojects {
+allprojects {
     repositories {
         google()
         mavenCentral()
@@ -25,7 +25,13 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 
 android {
+    compileSdkVersion 33
     namespace 'pt.dgsilva.flutter_html_to_pdf'
+
+    defaultConfig {
+        minSdkVersion 21
+    }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -37,10 +43,6 @@ android {
 
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
-    }
-
-    defaultConfig {
-        minSdkVersion 21
     }
 }
 
