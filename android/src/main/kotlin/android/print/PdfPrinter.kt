@@ -1,12 +1,8 @@
-package pt.dgsilva.flutter_html_to_pdf
+package android.print
 
 import android.os.Build
 import android.os.CancellationSignal
-import android.print.PageRange
-import android.print.PrintAttributes
-import android.print.PrintDocumentAdapter
-import android.print.PrintDocumentInfo
-import android.print.getOutputFile
+import android.os.ParcelFileDescriptor
 import java.io.File
 
 class PdfPrinter(private val printAttributes: PrintAttributes) {
@@ -55,5 +51,17 @@ class PdfPrinter(private val printAttributes: PrintAttributes) {
                 null
             )
         }
+    }
+}
+
+
+private fun getOutputFile(path: File, fileName: String): ParcelFileDescriptor {
+    if (!path.exists()) {
+        path.mkdirs()
+    }
+
+    File(path, fileName).let {
+        it.createNewFile()
+        return ParcelFileDescriptor.open(it, ParcelFileDescriptor.MODE_READ_WRITE)
     }
 }

@@ -1,8 +1,9 @@
-package pt.dgsilva.flutter_html_to_pdf
+package com.afur.flutter_html_to_pdf
 
 import android.annotation.SuppressLint
 import android.content.Context
 import android.os.Build
+import android.print.PdfPrinter
 import android.print.PrintAttributes
 import android.webkit.WebView
 import android.webkit.WebViewClient

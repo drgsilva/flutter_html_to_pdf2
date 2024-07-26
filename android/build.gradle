@@ -1,4 +1,4 @@
-group 'com.afur.flutter_html_to_pdf'
+group 'pt.dgsilva.flutter_html_to_pdf'
 version '1.0-SNAPSHOT'
 
 buildscript {

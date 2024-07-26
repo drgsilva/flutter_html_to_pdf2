@@ -1,4 +1,4 @@
-package pt.dgsilva.flutter_html_to_pdf
+package com.afur.flutter_html_to_pdf
 
 import android.content.Context
 import androidx.annotation.NonNull
